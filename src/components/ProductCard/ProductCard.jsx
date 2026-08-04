@@ -14,13 +14,12 @@ export default function ProductCard({
             <div className="product-image">
 
                 <img
-                    src={`http://localhost:8080/images/${product.imageUrl}`}
-                    alt={product.name}
-                    onError={(e) => {
-                        e.target.src = "https://placehold.co/300x220";
-                    }}
-                />
-
+    src={product.imageUrl}
+    alt={product.name}
+    onError={(e) => {
+        e.target.src = "https://placehold.co/300x220";
+    }}
+/>
             </div>
 
             <div className="product-content">

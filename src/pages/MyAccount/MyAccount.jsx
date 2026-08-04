@@ -75,9 +75,8 @@ export default function MyAccount() {
 
 
             if (data.profileImage) {
-                setPreviewImage(
-    `http://localhost:8080/profile/${data.profileImage}?t=${new Date().getTime()}`
-);
+                setPreviewImage(data.profileImage);
+
 
             } else {
 
@@ -130,17 +129,15 @@ export default function MyAccount() {
         }
 
 
-        if (!file.type.startsWith("image/")) {
+       if (!file || !file.type.startsWith("image/")) {
 
-            alert(
-                "Please select an image file."
-            );
+    alert("Please select a valid image file.");
 
-            e.target.value = "";
+    e.target.value = "";
 
-            return;
+    return;
 
-        }
+}
 
 
         if (file.size > 5 * 1024 * 1024) {
@@ -189,11 +186,7 @@ const updatedUser = response.data;
 setProfile(updatedUser);
 
 // Force latest image
-const imageUrl = updatedUser.profileImage
-    ? `http://localhost:8080/profile/${updatedUser.profileImage}?t=${new Date().getTime()}`
-    : null;
-
-setPreviewImage(imageUrl);
+setPreviewImage(updatedUser.profileImage);
 
 login(updatedUser);
 
@@ -301,11 +294,9 @@ alert("Profile photo updated successfully.");
              */
             if (updatedUser.profileImage) {
 
-                setPreviewImage(
-    `http://localhost:8080/profile/${updatedUser.profileImage}?t=${Date.now()}`
-);
+    setPreviewImage(updatedUser.profileImage);
 
-            }
+}
 
 
             setEditMode(false);

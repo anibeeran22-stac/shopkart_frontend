@@ -162,11 +162,11 @@ export default function ProductDetails() {
     <div className="product-image-box">
 
         <img
-            src={
-                product?.imageUrl
-                    ? `http://localhost:8080/images/${product.imageUrl}`
-                    : "https://placehold.co/500x500?text=No+Image"
-            }
+           src={
+    product?.imageUrl
+        ? product.imageUrl
+        : "https://placehold.co/500x500?text=No+Image"
+}
             alt={product?.name || "Product"}
             onError={(e) => {
                 console.error("Image failed:", e.currentTarget.src);
@@ -405,13 +405,12 @@ export default function ProductDetails() {
                         <div className="related-image">
 
                             <img
-                                src={`http://localhost:8080/images/${item.imageUrl}`}
-                                alt={item.name}
-                                onError={(e) => {
-                                    e.target.src =
-                                        "https://placehold.co/300x300";
-                                }}
-                            />
+    src={item.imageUrl}
+    alt={item.name}
+    onError={(e) => {
+        e.target.src = "https://placehold.co/300x300";
+    }}
+/>
 
                         </div>
 
