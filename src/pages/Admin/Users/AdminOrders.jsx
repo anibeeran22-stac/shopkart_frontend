@@ -194,7 +194,7 @@ export default function AdminOrders() {
                                         <div className="product-cell">
 
                                             <img
-                                                src={`http://localhost:8080/images/${order.items?.[0]?.imageUrl}`}
+                                                src={order.items?.[0]?.imageUrl}
                                                 alt=""
                                                 onError={(e) => {
                                                     e.target.src =
