@@ -101,7 +101,7 @@ const ProductList = () => {
 
                 <td>
                   <img
-                    src={`http://localhost:8080/images/${product.imageUrl}`}
+                    src={product.imageUrl}
                     onError={(e)=>{ 
                     e.target.src="https://placehold.co/70x70";
                   }}
