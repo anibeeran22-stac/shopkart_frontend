@@ -22,27 +22,25 @@
 
 /* IMAGE */
 
-.product-image{
-    height:180px;
-    padding:10px;
+.product-image {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    box-sizing: border-box;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    background:#0f172a;
-    overflow:hidden;
+    background: #0f172a;
+    overflow: hidden;
 }
 
-.product-image img{
-    width:auto;
-    height:100%;
-    max-width:90%;
-
-    object-fit:contain;
-    display:block;
-
-    transition:.3s;
+.product-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .product-card:hover .product-image img{
